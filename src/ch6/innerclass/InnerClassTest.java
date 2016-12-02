@@ -1,4 +1,4 @@
-package ch6;
+package ch6.innerclass;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;

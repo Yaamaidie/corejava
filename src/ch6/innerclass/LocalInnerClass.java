@@ -10,25 +10,22 @@ import javax.swing.Timer;
 
 import ch6.innerclass.TalkingClock.TimePrinter;
 
+/**
+ * 演示局部内部类
+ * @author lee
+ *
+ */
 public class LocalInnerClass {
 	public static void main(String[] args) {
-		TalkingClock clock = new TalkingClock(1000, true);
-		clock.start();
+		TalkingClock2 clock = new TalkingClock2();
+		clock.start(1000, true);
 
 		JOptionPane.showMessageDialog(null, "Quit program?");
 	}
 }
 
 class TalkingClock2 {
-	private int interval;
-	private boolean beep;
-	
-	public TalkingClock2(int it,  boolean bp) {
-		interval = it;
-		beep = bp;
-	}
-	
-	public void satrt() {
+	public void start(int interval, boolean beep) {
 		class TimePrinter implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent e) {
