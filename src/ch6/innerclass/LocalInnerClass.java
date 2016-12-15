@@ -25,7 +25,7 @@ public class LocalInnerClass {
 }
 
 class TalkingClock2 {
-	public void start(int interval, boolean beep) {
+	public void start(int interval, final boolean beep) {
 		class TimePrinter implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent e) {
