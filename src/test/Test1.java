@@ -7,7 +7,7 @@ import org.junit.Test;
 public class Test1 {
 	@Test
 	public void reflection() throws Exception {
-		ch5.reflection.ReflectionTest.printAll("ch6.innerclass.TalkingClock2$1TimePrinter");
+//		ch5.reflection.ReflectionTest.printAll("ch6.innerclass.TalkingClock2$1TimePrinter");
 	}
 	
 	@Test

@@ -1,7 +1,5 @@
 package volumn1.ch5;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class Demo {

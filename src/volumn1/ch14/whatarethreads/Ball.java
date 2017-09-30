@@ -1,6 +1,7 @@
 package volumn1.ch14.whatarethreads;
 
 import java.awt.geom.*;
+import java.util.Random;
 
 /**
  * 一个不断移动的球，碰到边界会弹回
@@ -14,28 +15,33 @@ public class Ball {
 	
 	private double x = 0;
 	private double y = 0;
-	private double dx = 1;
-	private double dy = 1;
-	
+	private double dx;
+	private double dy;
+	private int xfactor = 1;
+	private int yfactor = 1;
+
 	/**
 	 * 移动球到下一个位置，碰到边界会反转方向
 	 */
 	public void move(Rectangle2D bounds) {
+		Random r = new Random();
+		dx = xfactor * r.nextInt(10);
+		dy = yfactor * r.nextInt(10);
 		x += dx;
 		y += dy;
 		if (x < bounds.getMinX()) {//左边界反转
 			x = bounds.getMinX();
-			dx = -dx;
+			xfactor = -xfactor;
 		}
 		if (x + XSIZE >= bounds.getMaxX()) {//右边界反转
 			x = bounds.getMaxX() - XSIZE;
-			dx = -dx;
+			xfactor = -xfactor;
 		}
 		if (y < bounds.getMinY()) {//上边界反转
-			dy = -dy;
+			yfactor = -yfactor;
 		}
 		if (y + YSIZE >= bounds.getMaxY()) {//下边界反转
-			dy = -dy;
+			yfactor = -yfactor;
 		}
 	}
 	

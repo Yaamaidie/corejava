@@ -13,7 +13,7 @@ public class BallComponent extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	
-	private ArrayList<Ball> balls = new ArrayList<>();
+	private LinkedList<Ball> balls = new LinkedList<>();
 	
 	/**
 	 * 添加一个球到这个组件
@@ -22,7 +22,8 @@ public class BallComponent extends JPanel{
 	public void add(Ball b) {
 		balls.add(b);
 	}
-	
+
+	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);//擦除背景
 		Graphics2D g2 = (Graphics2D) g;

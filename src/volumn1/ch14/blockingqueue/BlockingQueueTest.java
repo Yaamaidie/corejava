@@ -130,5 +130,4 @@ class SearchTask implements Runnable {
 		}
 		in.close();
 	}
-
 }

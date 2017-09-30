@@ -14,13 +14,11 @@ public class Bounce {
 	
 	public static void main (String[] args) {
 		EventQueue.invokeLater(new Runnable() {
-
 			public void run() {
 				JFrame frame = new BounceFrame();
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setVisible(true);
 			}
-			
 		});
 	}
 	
@@ -33,11 +31,9 @@ class BounceFrame extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public static final int DEFAULT_WIDTH = 450;
-	public static final int DEFAULT_HEIGHT = 350;
-	public static final int STEPS = 10000;
-	public static final int DELAY = 3;
-	
+	public static final int DEFAULT_WIDTH = 1450;
+	public static final int DEFAULT_HEIGHT = 700;
+
 	private BallComponent comp;
 	
 	public BounceFrame() {
@@ -80,19 +76,22 @@ class BounceFrame extends JFrame {
 	/**
 	 * 每次调用添加一个新的跳动的球到面板并且让他跳动1000次
 	 */
-	public void addBall() {	
-		Ball ball = new Ball();
-		comp.add(ball);
-		Runnable r = new BallRunable(ball, comp);
-		Thread t = new Thread(r);
-		t.start();
+	int count = 100;
+	public void addBall() {
+		for (int i = 0; i < count; i++) {
+			Ball ball = new Ball();
+			comp.add(ball);
+			Runnable r = new BallRunable(ball, comp);
+			Thread t = new Thread(r);
+			t.start();
+		}
 	}
 	
 }
 
 class BallRunable implements Runnable {
 	
-	public static final int STEPS = 1000;
+	public static final int STEPS = 100000;
 	public static final int DELAY = 3;
 	
 	private Ball ball;
